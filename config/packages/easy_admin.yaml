@@ -1,0 +1,16 @@
+easy_admin:
+    entities:
+        Song:
+            list:
+                fields:
+                    - { property: 'image', type: 'image', base_path: '%app.path.song_images%' }
+                    - { property: 'mix', base_path: '%app.path.song_mix%' }
+            form:
+                fields:
+                    - { property: 'VichImageType', type: 'vich_image' }
+                    - { property: 'mixFile', type: 'vich_file' }
+            show:
+                fields:
+                    - { property: 'image', type: 'image', base_path: '%app.path.song_images%' }
+                    - { property: 'mix', type: 'vich_file', base_path: '%app.path.song_mix%' }
+            

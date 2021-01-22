@@ -1,0 +1,39 @@
+<div id="controller_div" class="col-sm-6 col-md-5 col-xl-4">
+    <h6 id="experience_title">Activer les jeux de lumières !</h6>
+    <h6 id="experience_button"><a href="#" id="audioControl" onclick="videoController()">Entrer dans l'expérience !</a></h6>
+    <p id="experience_attention">Attention : certaines animations peuvent être à risque pour les personnes sujettent à l'épilepsie</p>
+</div>
+<div class="col-sm-4" id="filters_div">
+    <h6 class="filters_title">Filtres de recherche</h6>
+    <div class="filters_div_flex">
+        <div class="input-group mb-3 filters_time_div col-sm-8">
+            <h6>Durée :</h6>
+            {{ form(filter_form) }}
+            <!-- TESTING SYMFONY FORMS
+            <ul class="ul_criterias">
+                <li>
+                    <input type="checkbox" aria-label="Checkbox for the time limit of a mix, here less than thirty minutes long"><small> - 30min</small>
+                </li>
+                <li>
+                    <input type="checkbox" aria-label="Checkbox for the time limit of a mix, here longuer than thirty minutes"><small> + 30min</small>
+                </li>
+                <li class="li_criterias">
+                    <button class="btn btn-primary send_criterias" type="submit"  onclick="this.blur();"><small>Rechercher</small></button>
+                </li>
+            </ul>
+        -->
+        </div>
+        <div class="col-sm-4 px-0">
+            <ul style="margin: 0;">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle genre_dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Genre : </a>
+                    <div class="dropdown-menu">
+                        {% for genre in genre %}
+                        <a class="dropdown-item" href="#">{{genre.name}}</a>
+                        {% endfor %}
+                    </div>
+                </li>
+            </ul>  
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<!-- "header" div flex -->         
+<!-- logo -->
+<div class="header_logo" id="top">
+    <img src="{{ asset('images/logo_2.png') }}" alt="Logo blanc avec intitulé DJ Démoniack">
+</div>
+<!-- Title -->
+<div id="header_title_pack">
+    <!--<h1>DJ Démoniack</h1>-->
+    <h3 id="page_subtitle">Music is rythm, rythm is beat, beat is life.</h3>
+    <!-- Search Bar -->
+    <div class="d-flex navbar_search">
+        <a class="nav-link"  data-toggle="tooltip" data-placement="top" title="Retour à l'accueil du site" href="{{ path('homepage') }}"><i class="fas fa-home"></i> Accueil</a>
+        {{ form(search_form) }}
+    </div>
+</div>
+</div>
+<div class="container">
+{% for label, messages in app.flashes %}
+{% for message in messages %}
+    <div class="alert alert-{{ label }}">
+        {{ message }}
+    </div>
+{% endfor %}
+{% endfor %}
+            

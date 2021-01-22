@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}DJ Démoniack, Log in!{% endblock %}
+
+{% block body %}
+<!-- Import Nav -->
+<div>
+    {{ render(path('navBar')) }}
+</div>
+<main>
+    <section>
+        <div class="login-card  col-xl-7">
+            <div class="card-body">
+                <form method="post">
+                    {% if error %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}                              
+                        </div>
+                    {% endif %}
+                    <div class="form-group admin_login">
+                        <label class="my-3" for="inputEmail">Adresse mail</label>
+                        <input name="email" type="email" class="form-control my-1" id="inputEmail" aria-describedby="emailHelp" placeholder="Saisir l'adresse mail" style="width: 80%;" required>
+                    </div>
+                    <div class="form-group admin_login">
+                        <label class="my-3" for="exampleInputPassword1">Mot de passe</label>
+                        <input type="password" class="form-control my-1" placeholder="Saisir le mot de passe" id="inputPassword" name="password" style="width: 60%;"  required>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-success">Se Connecter</button>
+                    </div>
+                    <div>
+                        <input type="hidden" name="_csrf_token"
+                        value="{{ csrf_token('authenticate') }}">
+                    </div>                
+                </form>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+{% endblock %}
